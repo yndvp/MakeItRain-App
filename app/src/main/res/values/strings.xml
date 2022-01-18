@@ -4,4 +4,5 @@
     <string name="money_value">$2000</string>
     <string name="make_it_rain">Make It Rain</string>
     <string name="show_info">Show Info</string>
+    <string name="test">HelloId</string>
 </resources>
