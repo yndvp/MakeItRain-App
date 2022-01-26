@@ -1,7 +1,9 @@
 package com.example.makeitrain;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         makeItRain = findViewById(R.id.buttonMakeItRain);
         moneyValue = findViewById(R.id.moneyValue);
 
@@ -45,6 +48,26 @@ public class MainActivity extends AppCompatActivity {
         moneyCounter += 1000;
         moneyValue.setText(String.valueOf(numberFormat.format(moneyCounter)));
         Log.d("MIR", "onClick: Make it rain " + moneyCounter);
+
+//        if(moneyCounter == 20000) {
+//            moneyValue.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.orange));
+//        }
+
+        switch (moneyCounter) {
+            case 20000:
+                moneyValue.setTextColor(ContextCompat.getColor(MainActivity.this,
+                        R.color.purple_700));
+                break;
+            case 30000:
+                // Another way to set color
+                moneyValue.setTextColor(Color.MAGENTA);
+                break;
+            case 40000:
+                moneyValue.setTextColor(Color.LTGRAY);
+                break;
+            default:
+                moneyValue.setTextColor(Color.WHITE);
+        }
     }
 
     public void showInfo(View view) {
